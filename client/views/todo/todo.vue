@@ -142,7 +142,6 @@ export default {
     clearAllCompleted () {
       // 给todos赋一个新的值（即todo.completed为false的值）
       // this.todos = this.todos.filter(todo => !todo.completed)
-      debugger // eslint-disable-line
       this.deleteAllCompleted()
     },
     handleChangeTab (value) {
