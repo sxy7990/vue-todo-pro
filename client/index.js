@@ -60,5 +60,5 @@ router.afterEach((to, from) => {
 new Vue({
   router,
   store,
-  render: (h) => h(App)
+  render: (h) => h(App),
 }).$mount('#root')

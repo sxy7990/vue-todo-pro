@@ -9,7 +9,7 @@ const compoent = {
         return typeof value === 'boolean'
       }
     },
-    propOne: String,
+    propOne: String
   },
   template: `
     <div>
