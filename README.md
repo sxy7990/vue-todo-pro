@@ -1,14 +1,14 @@
 # Vue + Webpack 的 todo app
 
 ## 项目命令介绍
-npm i------安装
-npm run build:client------打包本地
-npm run build:server------打包模拟的服务端渲染
-npm run build------两个同时打包
-npm run clean------清理打包的文件
-npm run dev:client------运行本地
-npm run dev:server------运行模拟的服务端渲染
-npm run------两个一起运行
+npm i------安装<br/>
+npm run build:client------打包本地<br/>
+npm run build:server------打包模拟的服务端渲染<br/>
+npm run build------两个同时打包<br/>
+npm run clean------清理打包的文件<br/>
+npm run dev:client------运行本地<br/>
+npm run dev:server------运行模拟的服务端渲染<br/>
+npm run------两个一起运行<br/>
 npm start------启动打包的模拟服务端
 
 ## 本项目使用到的webpack loader
@@ -63,19 +63,19 @@ vue-meta------管理meta头部标签
 husky------很方便的在package.json配置git hook脚本，比如git提交前用eslint检查语法
 
 ## 使用eslint需要用到的插件：
-eslint
-eslint-config-standard
-eslint-loader
-eslint-plugin-html
-eslint-plugin-import
-eslint-plugin-node
-eslint-plugin-promise
+eslint<br/>
+eslint-config-standard<br/>
+eslint-loader<br/>
+eslint-plugin-html<br/>
+eslint-plugin-import<br/>
+eslint-plugin-node<br/>
+eslint-plugin-promise<br/>
 eslint-plugin-standard
 
 ## 支持jsx语法需要用到插件：
-babel-preset-env
-babel-plugin-syntax-jsx
-babel-plugin-transform-vue-jsx------vue官方提供的编译jsx
+babel-preset-env<br/>
+babel-plugin-syntax-jsx<br/>
+babel-plugin-transform-vue-jsx------vue官方提供的编译jsx<br/>
 babel-helper-vue-jsx-merge-props
 
 ## 用到的其他技术
