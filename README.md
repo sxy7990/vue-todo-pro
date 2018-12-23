@@ -1,28 +1,99 @@
-# Vue+Webpack打造todo应用
+# Vue + Webpack 的 todo app
 
-热更新不起作用时，就把node_modules这个文件夹删了，然后npm i重新下载，而我先把node_modules这个文件夹改个名，接着npm i重新下载，因为删node_modules也要一些时间，不想等。。<br/>
+## 项目命令介绍
+npm i------安装
+npm run build:client------打包本地
+npm run build:server------打包模拟的服务端渲染
+npm run build------两个同时打包
+npm run clean------清理打包的文件
+npm run dev:client------运行本地
+npm run dev:server------运行模拟的服务端渲染
+npm run------两个一起运行
+npm start------启动打包的模拟服务端
 
-视频里所有提到的插件，描述可能不是很准确，毕竟也是从网上拼凑出来的<br/>
-webpack<br/>
-Vue<br/>
-vue-loader
-css-loader-------处理css文件中的url()等	http://www.css88.com/doc/webpack/loaders/css-loader/<br/>
-style-loader-------自动将css代码放到生成的style标签中插入到head标签里		http://www.css88.com/doc/webpack/loaders/style-loader/<br/>
-url-loader-------解决图片较多，会发很多http请求，会降低页面性能等问题		http://www.css88.com/doc/webpack/loaders/url-loader/<br/>
-file-loader-------解决图片引入问题		http://www.css88.com/doc/webpack/loaders/file-loader/<br/>
-stylus<br/>
-stylus-loader-------将stylus语言转化为原生css<br/>
-cross-env-------运行跨平台设置和使用环境变量的脚本<br/>
-html-webpack-plugin-------生成一个自动引用你打包后的JS文件的新index.html。这在每次生成的js文件名称不同时非常有用（比如添加了hash值）<br/>
-webpack-dev-server-------提供了开发环境调试工具 		https://blog.csdn.net/qq_38652603/article/details/73865017
-postcss-loader-------补全css代码的兼容性前缀<br/>
-autoprefixer-------自动添加css前缀的功能<br/>
-babel-plugin-syntax-jsx<br/>
-babel-helper-vue-jsx-merge-props<br/>
-extract-text-webpack-plugin-------将样式文件单独打包 		http://www.css88.com/doc/webpack/plugins/extract-text-webpack-plugin/<br/>
-babel-preset-env-------根据当前的运行环境来自动配置源码到当前环境可正常运行的代码的编译转换    https://coding.imooc.com/learn/questiondetail/8901.html<br/>
-babel-plugin-transform-vue-jsx-------Vue官方提供了一个叫做babel-plugin-transform-vue-jsx的插件来编译JSX<br/>
-babel-core-------babel-core是作为babel的核心存在,babel的核心api都在这个模块里面<br/>
-babel-loader-------调用babel-core的API来完成转译过程		http://www.css88.com/doc/webpack/loaders/babel-loader/<br/>
+## 本项目使用到的webpack loader
+vue-loader------vue项目必要的，处理.vue文件，处理资源路径，使用预处理等很多功能
+https://vue-loader.vuejs.org/zh/
 
-nodemon：node服务自动重启配置
+css-loader------处理css文件中的url()，解释(interpret) @import 和 url() ，会 import/require() 后再解析(resolve)它们。
+https://www.webpackjs.com/loaders/css-loader/
+
+style-loader------自动将css代码放到生成的style标签中插入到head标签里，webpack肯定是先将所有css模块依赖解析完得到计算结果再创建style标签。因此应该把style-loader放在css-loader的前面（webpack loader的执行顺序是从右到左）
+https://www.webpackjs.com/loaders/style-loader/
+
+url-loader------解决图片较多，会发很多http请求，会降低页面性能等问题https://www.webpackjs.com/loaders/url-loader/
+
+file-loader------解决图片引入问题
+https://www.webpackjs.com/loaders/file-loader/
+
+stylus-loader------将stylus语言转化为原生css
+
+postcss-loader------补全css代码的兼容性前缀
+https://www.webpackjs.com/loaders/postcss-loader/
+
+## 本项目使用到的webpack plugin
+webpack.DefinePlugin------设定环境变量
+
+html-webpack-plugin------生成一个自动引用你打包后的JS文件的新index.html。这在每次生成的js文件名称不同时非常有用（比如添加了hash值）
+https://webpack.docschina.org/plugins/html-webpack-plugin/
+
+webpack-dev-server------提供了开发环境调试工具，它支持代码热更新，能迅速将更改后的代码更新到浏览器中。在这个模式下，构建后的代码在内存中，不会写入硬盘，所以读写速度快了很多。
+
+extract-text-webpack-plugin------抽离css文件，将css文件单独打包，防止将样式打包在js中引起页面样式加载错乱的现象
+
+babel-preset-env------根据当前的运行环境来自动配置源码到当前环境可正常运行的代码的编译转换
+
+babel-core------babel-core是作为babel的核心存在，babel的核心api都在这个模块里面
+
+babel-loader------调用babel-core的API来完成转译过程
+
+## 其他好用的插件
+cross-env------运行跨平台设置和使用环境变量的脚本
+
+autoprefixer------自动添加css前缀的功能
+
+concurrently------通过 && 连接起来的命令,会按照顺序执行，一旦有“阻塞”的命令，后面的命令将会无法执行。用concurrently可以并发执行命令。
+
+memory-fs------将文件写到内存，而不是磁盘，读写更快
+
+sha1------帮助生成请求线上数据库的签名
+
+vue-meta------管理meta头部标签
+
+husky------很方便的在package.json配置git hook脚本，比如git提交前用eslint检查语法
+
+## 使用eslint需要用到的插件：
+eslint
+eslint-config-standard
+eslint-loader
+eslint-plugin-html
+eslint-plugin-import
+eslint-plugin-node
+eslint-plugin-promise
+eslint-plugin-standard
+
+## 支持jsx语法需要用到插件：
+babel-preset-env
+babel-plugin-syntax-jsx
+babel-plugin-transform-vue-jsx------vue官方提供的编译jsx
+babel-helper-vue-jsx-merge-props
+
+## 用到的其他技术
+nodemon------监视node.js应用程序中的任何更改并自动重启服务，非常适合用在开发环境中
+
+axios------发送http请求
+
+koa------node.js框架
+
+ejs------EJS是一套简单的模板语言，帮你利用普通的 JavaScript 代码生成 HTML 页面
+https://ejs.bootcss.com/
+
+## koa框架相关：
+koa-body------处理post请求、上传文件
+
+koa-router------路由中间件
+
+koa-send------文件上传、下载
+
+koa-session------session管理的中间件
+
