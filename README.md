@@ -52,7 +52,7 @@ cross-env------运行跨平台设置和使用环境变量的脚本
 
 autoprefixer------自动添加css前缀的功能
 
-concurrently------通过 && 连接起来的命令,会按照顺序执行，一旦有“阻塞”的命令，后面的命令将会无法执行。用concurrently可以并发执行命令。
+concurrently------通过 && 连接起来的命令,会按照顺序执行，一旦有“阻塞”的命令，后面的命令将会无法执行。用concurrently可以并发执行命令。具体写法看package.json文件
 
 memory-fs------将文件写到内存，而不是磁盘，读写更快
 
@@ -60,7 +60,10 @@ sha1------帮助生成请求线上数据库的签名
 
 vue-meta------管理meta头部标签
 
-husky------很方便的在package.json配置git hook脚本，比如git提交前用eslint检查语法
+husky------很方便的在package.json配置git hook脚本，比如git提交前用eslint检查语法，使用方法
+"scripts": {
+  "precommit": "npm run lint-fix",
+}
 
 ## 使用eslint需要用到的插件：
 eslint<br/>
