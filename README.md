@@ -71,12 +71,12 @@ husky------很方便的在package.json配置git hook脚本，比如git提交前�
 ## 使用eslint需要用到的插件：
 eslint<br/>
 eslint-config-standard<br/>
-eslint-loader<br/>
-eslint-plugin-html<br/>
 eslint-plugin-import<br/>
 eslint-plugin-node<br/>
 eslint-plugin-promise<br/>
 eslint-plugin-standard
+<!-- eslint-loader<br/> -->
+<!-- eslint-plugin-html<br/> -->
 
 ## 支持jsx语法需要用到插件：
 babel-preset-env<br/>
