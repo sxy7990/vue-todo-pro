@@ -11,6 +11,9 @@ npm run dev:server------运行模拟的服务端渲染<br/>
 npm run------两个一起运行<br/>
 npm start------启动打包的模拟服务端
 
+本地运行端口：8000<br/>
+模拟服务器渲染端口：3333
+
 ## 本项目使用到的webpack loader
 vue-loader------vue项目必要的，处理.vue文件，处理资源路径，使用预处理等很多功能
 https://vue-loader.vuejs.org/zh/
