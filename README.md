@@ -8,7 +8,7 @@ npm run build------两个同时打包<br/>
 npm run clean------清理打包的文件<br/>
 npm run dev:client------运行本地<br/>
 npm run dev:server------运行模拟的服务端渲染<br/>
-npm run------两个一起运行<br/>
+npm run dev------两个一起运行<br/>
 npm start------启动打包的模拟服务端
 
 本地运行端口：8000<br/>
