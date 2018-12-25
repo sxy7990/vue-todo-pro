@@ -12,7 +12,7 @@
     "clean": "rimraf public && rimraf server-build",
     "lint": "eslint --ext .js --ext .jsx --ext .vue client/ practice/ server/",
     "lint-fix": "eslint --fix --ext .js --ext .jsx --ext .vue client/ practice/ server/",
-    "precommit": "npm run lint-fix",
+    "precommit": "npm run lint",
     "dev:client": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.client.js",
     "dev:server": "nodemon server/server.js",
     "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
