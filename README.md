@@ -9,7 +9,10 @@ npm run clean------清理打包的文件<br/>
 npm run dev:client------运行本地<br/>
 npm run dev:server------运行模拟的服务端渲染<br/>
 npm run dev------两个一起运行<br/>
-npm start------启动打包的模拟服务端
+npm run start------启动打包的模拟服务端<br/>
+npm run clean------清除打包的/public/和/server-build/<br/>
+npm run lint------用eslint检查代码规范问题<br/>
+npm run lint-fix------按照eslint规范自动修复代码问题
 
 本地运行端口：8000<br/>
 模拟服务器渲染端口：3333
